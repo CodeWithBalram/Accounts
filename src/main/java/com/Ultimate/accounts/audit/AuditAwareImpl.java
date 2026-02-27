@@ -1,4 +1,15 @@
 package com.Ultimate.accounts.audit;
 
-public class AuditAwareImpl {
+import org.springframework.data.domain.AuditorAware;
+import org.springframework.stereotype.Component;
+
+import java.util.Optional;
+
+@Component("auditAwareImpl")
+public class AuditAwareImpl implements AuditorAware
+{
+    @Override
+    public Optional getCurrentAuditor() {
+        return Optional.of("Accounts_MS");
+    }
 }

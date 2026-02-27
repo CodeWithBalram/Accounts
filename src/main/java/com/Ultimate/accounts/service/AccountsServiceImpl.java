@@ -34,8 +34,7 @@ public class AccountsServiceImpl implements IAccountsService
             throw new CustomerAlreadyExistsException("Customer already registered with given mobileNumber");
         }
         Customer customer=CustomerMapper.mapToCustomer(customerDto,new Customer());
-        customer.setCreatedAt(java.time.LocalDateTime.now());
-        customer.setCreatedBy("SYSTEM");
+
         Customer savedCustomer=customerRepository.save(customer);
         accountsRepository.save(createNewAccount(savedCustomer));
 

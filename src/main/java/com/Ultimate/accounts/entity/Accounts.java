@@ -2,10 +2,12 @@ package com.Ultimate.accounts.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.data.annotation.CreatedDate;
 
 @Entity
 @Getter @Setter @ToString @AllArgsConstructor @NoArgsConstructor
 public class Accounts extends  BaseEntity {
+
 
     @Column(name="customer_id")
     private Long customerId;
